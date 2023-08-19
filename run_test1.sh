@@ -6,9 +6,7 @@ echo ""    #just empty line
 now=$(date)
 output=out.txt
 echo "#################################################$now##############################################" >> $output
-echo ================ >> $output
-echo result >> $output
-echo ================ >> $output
+echo ""  #Just empty line
 #file with team and repo names with permissions
 TXT_FILE="repolist.txt"   #API has diffrent names for Read and Write. API Read is passed in as pull & Write is push
 #Loop through CSV entries and change permissions
