@@ -17,7 +17,7 @@ curl -L -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: Beare
 status=$(curl -L -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $PAT" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/orgs/WoolworthsSOISaml/teams/$team/repos/WoolworthsSOISaml/$repo -d '{"permission":"'$permission'"}' -s -o /dev/null -w "%{http_code}")
 if [[ $status == 200 ]] || [[ $status == 204 ]]
 then
-        echo teams updated to $repo >> $output
+        echo Successfully updated $repo >> $output
         echo $team is added to $repo with role $permission >> $output
         echo "---------------------------------------------------------------------------------------" >> $output
 else
