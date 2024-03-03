@@ -10,7 +10,7 @@ sha=$(echo "$response" | jq -r '.sha')
 echo "SHA of $FILE_PATH: $sha"
 # Fetch existing CODEOWNERS content
 EXISTING_CONTENT=$(curl -H "Authorization: token $ACCESS_TOKEN" "https://api.github.com/repos/umeshur/umeshur/contents/CODEOWNERS?ref=main" | jq -r '.["content"]')
-#EXIT=$(echo "$EXISTING_CONTENT"| base64 --decode)
-EXIT=$(echo "$EXISTING_CONTENT" | openssl enc -d -base64)
-echo $EXIT >> output_code.txt
+# #EXIT=$(echo "$EXISTING_CONTENT"| base64 --decode)
+# EXIT=$(echo "$EXISTING_CONTENT" | openssl enc -d -base64)
+# echo $EXIT >> output_code.txt
 
